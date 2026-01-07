@@ -1,0 +1,123 @@
+:root{
+    --primary-color: rgb(167, 158, 158);
+    --accent-color: #333;
+    --light-bg: #f9f9f9;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.changeLog-container{
+    width: 50vw;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+
+}
+
+.changeLog__title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.changeLog__title h1{
+    color: var(--accent-color);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.changeLog__title p{
+    color: var(--primary-color);
+    font-size: 1.125rem;
+}
+
+.timeline{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    gap: 40px;
+}
+
+.timeline::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 100%;
+    background-color: var(--accent-color);
+
+}
+
+.single-time{
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.timeline-data{
+    font-size: 1.22rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.timeline-marker{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+
+}
+
+
+.timeline-content{
+    background-color: var(--light-bg);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 5px var(--accent-color);
+    max-width: 200px;
+}
+
+.timeline-content p{
+    font-size: 1.125rem;
+    color: var(--primary-color);
+}
+
+.single-time:nth-child(odd) .timeline-data{
+    order: 1;
+}
+
+.single-time:nth-child(odd) .timeline-marker{
+    margin-right: 15px;
+    order: 2;
+}
+
+.single-time:nth-child(odd) .timeline-content{
+    flex: 1;
+    order: 3;
+}
+
+
+.single-time:nth-child(even) .timeline-data{
+    order: 3;
+}
+
+.single-time:nth-child(even) .timeline-marker{
+    margin-left: 15px;
+    order: 2;
+}
+
+.single-time:nth-child(even) .timeline-content{
+    flex: 1;
+    order: 1;
+}
